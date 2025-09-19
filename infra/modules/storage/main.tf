@@ -3,7 +3,7 @@ resource "random_id" "suffix" {
 }
 
 resource "azurerm_storage_account" "tfstate" {
-  name                     = "tfstatestorage${random_id.suffix.hex}"
+  name = "tfstatestorage${var.prefix}"
   resource_group_name      = var.resource_group_name
   location                 = var.location
   account_tier             = "Standard"
